@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    text-align: justify-all;
+    /*font-family: 'Comfortaa', cursive;*/
+    font-family: 'Arvo', serif;
+}
+
+
+html {
+    overflow-x: hidden;
+}
+
+.user-container {
+    background-color: #F1F2F2;
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+.row {
+    width: 100%;
+}
+
+.user-data {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-img img {
+    margin-top: 36px;
+    border-radius: 20px;
+    max-width: 400px;
+    box-shadow: 2px 2px 15px grey;
+    max-height: 400px;
+}
+
+.user-rating {
+    display: inline-flex;
+    text-align: center;
+}
+
+.user-data {
+    max-width: 500px;
+    margin-top: 36px;
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 25px grey;
+    background-color: white;
+}
+
+.user-location {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.user-info {
+    min-height: 150px;
+}
+
+.container-reviews {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-reviews > div {
+    min-height: 280px;
+    background-color: white;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 25px grey;
+    flex-direction: column;
+    border: 1px solid grey;
+    font-size: 13.3px;
+}
+
+.review-rating {
+    margin-left: 20%;
+}
+
+.review-img {
+    margin-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review-img img {
+    box-shadow: 2px 2px 25px grey;
+}
+
+.review-img p {
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+.container-reviews .user-info {
+    padding-top: 15px;
+}
+
+div.stars {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+input.star { display: none; }
+
+label.star {
+    float: right;
+  padding: 2px;
+  font-size: 15px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}

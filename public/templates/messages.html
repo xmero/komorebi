@@ -1,0 +1,38 @@
+<table class="">
+ <select type="text" ng-model="status" placeholder="filter">
+      <option selected="selected" value=''>All</option>
+      <option value="read">Read</option>
+      <option value="not">Unread</option>
+    </select>
+<button ng-click="getSentMessages(message._id); viewSent = true">Sent</button>
+<button ng-click="getMessages(message._id); viewSent = false">Recieved</button>
+  <thead>
+      <tr>
+          <th>From</th>
+          <th>Subject</th>
+          <th>Body</th>
+          <th ng-hide="viewSent">Received</th>
+          <th ng-show="viewSent">Sent</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="message in messages | filter:{status: status }" >
+      <td>
+        <p>{{message.from}}</p>
+      </td>
+        <td class="message_subject">
+          <a href="#!/messages/view/{{message._id}}" ng-click="editMessage(message._id)">
+           {{message.subject}}
+          </a>
+        </td>
+        <td class="message_subject">
+          <p>
+           {{message.body}}
+          </p>
+        </td>
+        <td class="" >
+          <p>{{message.timestamp | date : 'short'}}</p>
+        </td>
+    </tr>
+  </tbody>
+</table>

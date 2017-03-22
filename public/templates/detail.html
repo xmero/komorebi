@@ -1,0 +1,84 @@
+   <link rel="stylesheet" href="../css/details.css">
+ <div >
+        <div class="row detail">
+            <div class="col-xs-12 col-md-5">
+                <img src="{{ product.image }}" class="img-responsive">
+                <button class="btn photo-nav">Other pictures</button>
+            </div>
+            <div class="col-xs-12 col-md-6 product-info">
+                <h3>{{ product.name }}</h3>
+                <p><i class="glyphicon glyphicon-map-marker"></i>Item location :  <span class="item-location "> {{ product.location }}</span>
+                <p>Description: </p></p>
+                <p>{{ product.description }}</p>
+                <button ng-show="loggedUser" href="" data-target="#requestModal" data-toggle="modal" class="btn btn-request hidden">Request this item</button>
+            </div>
+            <div class="col-xs-12 col-md-6 product-info user-info">
+                <h3><i class="glyphicon glyphicon-user"> <a href="#!/users/{{product.owner._id}}">{{ product.owner.username }}</a></i></h3> 
+                <div class="user-rating" ng-click="showReviews()">
+                    <i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star-empty"></i><i class="glyphicon glyphicon-star-empty"></i>
+                    <p>15 reviews </p>
+                </div>
+                <p>{{ product.owner.description }} </p>
+                <button ng-show="loggedUser" ng-if="product.free != 'given'" href="" data-target="#messageModal" data-toggle="modal" class="btn btn-request">Message user</button>
+            </div>
+        </div>
+    </div>
+<!-- Request Modal -->
+       <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <form class="form" method="POST" action='/sendmail'>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Request this Item</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4">
+                               
+                                <textarea name="messageBody"  cols="30 " rows="5 " placeholder="Hello, my name is ... and I'd like to have this item because ... "></textarea>
+            </div>
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer ">
+        <!-- <button type="button " class="btn btn-primary form-button">Request</button> -->
+                     <input type="hidden" name="name" value="{{ username }}">
+                  <input type="hidden" name="email" value="{{ product.owner.email }}">
+                <input type="hidden" name="product" value="{{ product.name }}">
+                <input type="hidden" name="location" value="{{ product.location }}">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary form-button">Request</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<!-- Message Modal -->
+       <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <form class="form" ng-submit='addMessage($event); sendEmail($event)' >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Send Message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4">
+                                <textarea ng-model="messageBody"  cols="30 " rows="5 " placeholder="Hello, my name is ... and I'd like to have this item because ... "></textarea>
+            </div>
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer ">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary form-button" onclick="$('.modal').modal('hide')" >Send</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

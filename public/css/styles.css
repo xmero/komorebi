@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    /*font-family: 'Comfortaa', cursive;*/
+    font-family: 'Arvo', serif;
+     text-align: justify-all;
+     font-size: 16px;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.navbar-default {
+    background-color: #F1F2F2;
+    margin-bottom: 0px;
+    height:20px;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.logo {
+    height: 100px;
+}
+
+
+.logo-banner div {
+display: flex;
+flex-wrap: wrap; 
+justify-content: space-around;
+}
+
+.modal-header{
+   background-color: #F1F2F2;
+   color:black; 
+}
+.modal-body{
+    background-color: rgba(0,0,0, 0.1) ;
+}
+
+
+.google-button{
+background-color: red;
+color: white;
+padding:15px;
+text-align: center;
+border-radius: 15px;
+}
+
+.form-group input{
+  padding:5px;
+}
+
+.form-group textarea{
+  padding:5px; 
+  border-radius: 5px;
+  border: 0.5px solid #dddbdb;
+  width: 100%;
+}
+
+.modal-footer{
+    background-color: #F1F2F2;
+}
+
+.form-button{
+    font-size: 20px;
+    width: 100px;
+    padding: 9px;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #8CC63F;
+    text-decoration: none;
+    cursor: pointer;
+    cursor: hand;
+    color: black;
+
+}
+
+.list-header-button {
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: #8cc63f;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    color: black;
+}
+
+.banner {
+    background: url("../img/wood.jpg") black 80% 50%;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 8px;
+}
+
+.banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.header-filter {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-filter h2 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: bold; 
+}
+
+.inbanner-form > input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 20px
+}
+
+.filter-button{
+    display:inline-flex;
+}
+
+.filter-button a {
+    font-size: 20px;
+    width: 100px;
+    padding: 9px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #8CC63F;
+    text-decoration: none;
+    cursor: pointer;
+    cursor: hand;
+    color: black;
+}
+
+.filter-button a:hover {
+    background-color: #058914;
+    color: white;
+}
+
+.short-filter {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.short-filter a:hover {
+    background-color: #058914;
+    color: white;
+}
+
+.short-filter a {
+    width: 33%;
+    height: 40px;
+    font-size: 20px;
+    background-color: #8CC63F;
+    border: 1px solid black;
+}
+
+.item-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    /*background-color: #E5E6E6;*/
+background-color: #F1F2F2;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    padding: 0px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px grey;
+    max-width: 300px;
+    max-height: 500px;
+}
+
+.item img {
+    align-self: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 10px;
+    width: 100%;
+    height: 170px;
+}
+
+.item div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+/*    margin-bottom: 5%;*/
+    height: 170px;
+    background-color: white;
+}
+
+.item-location {
+    font-style: italic;
+}
+
+.free-icon {
+    width: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    cursor: hand;
+    background-color: #8CC63F;
+    color: white;
+    text-align: center;
+}
+
+.advice {
+    text-align: center;
+    background-color: #8CC63F;
+    border: 1px solid black;
+    padding-top: 20px;
+}
+
+.advice div{
+    padding: 15px;
+}
+
+footer {
+     /*background-color: #F1F2F2;*/
+     background-color: #F1F2F2;
+     padding-top: 20px;
+}
+footer li{
+    list-style: none;
+
+}
+ 
+.footer-title{
+    font-weight: bold;
+}

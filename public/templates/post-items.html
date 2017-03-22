@@ -1,0 +1,39 @@
+            <div >
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 >List for FREE</h4>
+            </div>
+        <form enctype='multipart/form-data'>
+            <div class="modal-body">
+                <div >
+                    <div class="row">
+                        <div class="col-xs-12">
+                        <div class="form-group ">
+                                <p>Enter your item's name:</p>
+                                <input type="text" class="form-control" ng-model="name" placeholder="Item name ... "> 
+                                <p>Category:</p>
+                                <input type="text" class="form-control" ng-model="category" placeholder="Category ... ">  
+                                <p>Location:</p>
+                                <input type="text" class="form-control" ng-model="location" placeholder="Location ... ">
+                                <p>PostalCode:</p>
+                                <input type="text" class="form-control" ng-model="postalCode" placeholder="PostalCode ... ">    
+                                <p>Write a brief description:</p>
+                                <textarea type="text " class="form-control" ng-model="description" rows="5 " placeholder="Item description... "></textarea>
+                       
+                       
+                                <p>Add a picture of the item:</p>
+                           
+                                   <input name="file" type="file" ngf-select="fileSelected($files)" accept="'image/*'">
+                           
+                           
+                        </div>
+            </div>
+        </div>
+    </div>
+      </div>
+      <div>
+        <button type="submit " ng-click=" addProduct($event)" class="btn btn-primary form-button">Upload</button>
+      </div>
+         </form>
+    </div>
+  </div>
+</div>

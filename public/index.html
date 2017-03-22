@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SharingTreeApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SharingTree</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+
+<body> 
+
+<ng-include src="'/templates/navbar.html'"></ng-include>
+<ng-include src="'/templates/logo-banner.html'"></ng-include>
+
+
+   <ng-view></ng-view>
+
+<ng-include src="'/templates/footer.html'"></ng-include>
+
+    <script src='bower_components/jquery/dist/jquery.min.js'></script>
+    <script src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script src='bower_components/angular/angular.min.js'></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+     <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+
+    <script src="js/interceptors.js"></script>
+    
+    <script src="js/authServices/AuthFactory.js"></script>
+    <script src="js/authServices/StorageFactory.js"></script>
+    <script src="js/factories/MessagesFactory.js"></script>
+    <script src="js/factories/ProductsFactory.js"></script>
+    <script src="js/factories/UsersFactory.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/controllers/Upload.js"></script>
+    <script src="js/controllers/Messages.js"></script>
+    <script src="js/controllers/MessagesView.js"></script>
+    <script src="js/controllers/AddProduct.js"></script>
+    <script src="js/controllers/Private.js"></script>
+    <script src="js/controllers/navBar.js"></script>
+    <script src="js/controllers/Home.js"></script>
+    <script src="js/controllers/UsersList.js"></script>
+    <script src="js/controllers/User.js"></script>
+    <script src="js/controllers/Detail.js"></script>
+    <script src="js/config.js"></script>
+</body>
+
+</html>

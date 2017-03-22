@@ -1,0 +1,66 @@
+<table class="">
+  <a  href="#!/messages/{{loggedUser.id}}">Back to Messages</a>
+  <thead>
+      <tr>
+          <th>From</th>
+          <th>Subject</th>
+          <th>Body</th>
+          <th ng-if="message.sender === loggedUser.id">Sent</th>
+          <th ng-if="message.sender != loggedUser.id">Received</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <td>
+        <p>{{message.from}}</p>
+      </td>
+        <td class="message_subject">
+          <p>{{message.subject}}</p>
+        </td>
+        <td class="message_body">
+          <p>{{message.body}}</p>
+        </td>
+        <td class="" >
+          <p >{{message.timestamp | date : 'short'}}</p>
+        </td>
+        <td>
+          <button  ng-if="message.sender != loggedUser.id" data-target="#messageModal" data-toggle="modal" class="btn btn-request">Answer</button>
+          <button  ng-if="message.sender === loggedUser.id" data-target="#messageModal" data-toggle="modal" class="btn btn-request">Send message</button>
+        </td>
+        <td>
+          <a href="#!/messages/{{loggedUser.id}}" ng-click="editMessage(message._id)" >Mark as Unread</a>
+        </td>
+        <td>
+          <a href="#!/messages/{{message.recipient}}" ng-if="message.sender === loggedUser.id" ng-click="deleteMessage(message._id)" class="btn btn-danger" >DELETE</a>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- Message Modal -->
+       <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <form class="form" ng-submit='addMessage($event)' >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Send Message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4">
+                                <textarea ng-model="messageBody"  cols="30 " rows="5 " placeholder="Hello, my name is ... and I'd like to have this item because ... "></textarea>
+            </div>
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer ">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary form-button" onclick="$('.modal').modal('hide')" >Send</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
