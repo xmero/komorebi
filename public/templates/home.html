@@ -1,17 +1,31 @@
       <ng-include src="'/templates/filter-banner.html'"></ng-include>
+  
         <section>
-         <div class="row item-list container">
-         <div class="col-xs-12 col-md-3 item" ng-repeat="product in products | filter:{ location: city, name: keyword, postalCode: CP, free: status }">        
-                    <a href="#!/detail/{{product._id}}"><img src="{{ product.image }}" class="img-responsive "></a>
-                    <div class="container">
+         <div class="row item-list">
+         <div class="col-xs-12 col-md-3 item" ng-repeat="product in products | filter:{ location: city, name: keyword, postalCode: CP, free: status }">
+       
+
+                    <a href="#!/detail/{{product._id}}"><img src="{{ product.image }}"></a>
+                    <div>
                         <h3>{{ product.name }}</h3>
-                        <p class="free-icon" ng-if="product.free === 'free'">FREE</p>
-                        <p class="btn-success" ng-if="product.free === 'reserved'">Reserved</p>
-                        <p class="btn-warning" ng-if="product.free === 'given'">Given</p>
-                        <p class="item-location "><i class="glyphicon glyphicon-map-marker"></i> {{ product.location }} - {{product.postalCode}}</p>
-                        <i class="glyphicon glyphicon-user"> <a href="#!/users/{{product.owner._id}}">{{ product.owner.username }}</a>
-                        </i>
-                        <p>Listed on: {{product.createdAt | date: 'dd-MMMM'}}</p>
+
+                        <p class="free-icon" ng-if="product.free === 'free'">Disponible</p>
+                        <p class="reserved-icon" ng-if="product.free === 'reserved'">Reservado</p>
+                        <p class="given-icon" ng-if="product.free === 'given'">Regalado</p>
+                        
+                        <i ng-hide="product.owner.image" class="glyphicon glyphicon-user"></i>
+                        <div class="prod-owner"> 
+                          <a href="#!/users/{{product.owner._id}}">
+                            <img ng-show="product.owner.image"  src="{{ product.owner.image }}">
+                          {{ product.owner.username }}</a>
+                        </div>
+                        
+                        <div class="item-location ">
+                        <p ><i class="glyphicon glyphicon-map-marker"></i> {{ product.location }}</p>
+                        <p>Subido : {{product.createdAt | date: 'dd-MMMM'}}</p>
+                         </div>
                     </div>
          </div>
         </section>
+
+        <ng-include src="'/templates/footer.html'"></ng-include>

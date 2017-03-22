@@ -1,27 +1,7 @@
-        <section class="banner container-bigger">
-            <div class="container header-filter">
-                <div class="row text-center">
-                    <h2>Look for FREE stuff!</h2>
-                    <form class="inbanner-form">
-                        <input type="category" id="category" placeholder="Keyword/category" ng-model="$parent.keyword">
-                        <input type="city" id="city" placeholder="Enter city" ng-model="$parent.city">
-                        <input id="CP" placeholder="Enter PostalCode" ng-model="$parent.CP">
-                    <div class="filter-button">
-                        <a type="submit" class="">GO!</a>
-                    </div>
+        <section class="banner row">
+                    <h2 class="col-xs-12">Encuentra cosas gratis!</h2>
+                    <form class="inbanner-form col-xs-12">
+                        <input type="category" id="category" placeholder="¿Qué estas buscando?" ng-model="$parent.keyword">
+                        <input type="city" id="city" placeholder="Filtra por ciudad" ng-model="$parent.city">
                     </form>
-                </div>
-            </div>
-        <nav class="row short-filter">
-            <div class="col-xs-12 col-md-6 col-md-offset-3" id="product-list">
-                <div class=" btn-group-justified">
-                    <a ng-click="$parent.status = ''" class="btn btn-default">ALL
-                        </a>
-                    <a ng-click="$parent.status = 'free'" class="btn btn-default">FREE
-                        </a>
-                    <a ng-click="$parent.status = 'given'" class="btn btn-default">Given
-                        </a>
-                </div>
-            </div>
-        </nav>
         </section>
