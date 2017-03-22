@@ -24,7 +24,6 @@ let mailOptions = {
     }
 
 console.log("Sending email")
-console.log(req.body)
 // send mail with defined transport object
 transporter.sendMail( mailOptions,
     (err, response) => { 

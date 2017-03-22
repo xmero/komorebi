@@ -65,6 +65,7 @@ background-color: #EFEA07;
 }
 
 .banner {
+  margin-top: 50px;
     background: url("../img/backimage.jpg") 100% 38%;
     background-size: cover;
     display: flex;
@@ -147,6 +148,7 @@ background-color: #EFEA07;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
     border: 0.5px solid grey;
+    border-top: 0;
     height: 170px;
     background-color: white;
 }
@@ -210,7 +212,6 @@ color: black;
 .advice {
     text-align: center;
     background-color: #F6F377;
-    border: 1px solid black;
     padding-top: 20px;
 }
 
@@ -218,4 +219,9 @@ color: black;
     padding: 15px;
 }
 
-
+.about {
+    text-align: center;
+    background-color: black;
+    padding: 10px;
+    color:white;
+}

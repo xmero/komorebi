@@ -1,4 +1,4 @@
- <header class="navbar navbar-default">
+ <header class="navbar navbar-default navbar-fixed-top">
         <nav>
                 <div class="navbar-default nav-main">
                     <ul class="nav navbar-nav">
@@ -12,17 +12,62 @@
                     <ul class="nav navbar-nav nav-menu" ng-controller="NavbarCtrl">
                         <li ng-hide="loggedUser"><a href="#!/login">Iniciar sesión <i class="glyphicon glyphicon-user"></i></a></li>
                         <li ng-hide="loggedUser"><a href="#!/register">Registrarse</a></li>
-                        <li ng-show="loggedUser">
+                   
+                        <li class = "dropdown" ng-show="loggedUser">
+               <a class = "dropdown-toggle" data-toggle = "dropdown" href="#">Perfil <i class="glyphicon glyphicon-pencil"></i></a>
+            </a>
+            
+            <ul class = "dropdown-menu">
+                <li>
+                            <a  href="#!/private">Mi Perfil </a>
+                        </li>
+                            <li>
+                            <a  href="#!/private">Mis Productos </a>
+                        </li> 
+                             <li >
                             <a  ng-click="logout()" href="#">Cerrar sesión</a>
                         </li> 
-                        <li ng-show="loggedUser">
-                            <a  href="#!/private">Perfil <i class="glyphicon glyphicon-pencil"></i></a>
-                        </li> 
+
+
+            </ul>
+            
+         </li>
+   
                         <li ng-show="loggedUser">
                             <a  href="#!/messages/{{loggedUser.id}}">Mensajes <span ng-show="unread">{{unread}}</span> <i class="glyphicon glyphicon-envelope"></i></a>
                         </li>
                     </ul>
 
                 </div>
+
+<!-- comment-->
+               <!--  <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+    
+      <ul class = "nav navbar-nav">
+         <li class = "active"><a href = "#">iOS</a></li>
+         <li><a href = "#">SVN</a></li>
+            
+         <li class = "dropdown">
+            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+               Java 
+               <b class = "caret"></b>
+            </a>
+            
+            <ul class = "dropdown-menu">
+               <li><a href = "#">jmeter</a></li>
+               <li><a href = "#">EJB</a></li>
+               <li><a href = "#">Jasper Report</a></li>
+               
+               <li class = "divider"></li>
+               <li><a href = "#">Separated link</a></li>
+               
+               <li class = "divider"></li>
+               <li><a href = "#">One more separated link</a></li>
+            </ul>
+            
+         </li>
+            
+      </ul>
+   </div> -->
         </nav>
     </header>
