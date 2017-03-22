@@ -11,20 +11,42 @@ html {
 
 .navbar-default {
     background-color: white;
-    height: 50px;
- }
-
-.nav-main {
+    border: none;
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+    width:100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
+    flex-wrap: wrap;
+    justify-content: space-around;
+ }
+  
+.logo img{
     height: 100px;
 }
+
+.nav-menu {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .nav-menu li:hover {
 background-color: #EFEA07;
+}
+
+  
+
+.nav-menu li ul a:hover {
+background-color: #EFEA07;
+}
+
+#post-button{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .nav-button {
@@ -44,6 +66,11 @@ background-color: #EFEA07;
     font-size: 21px;
 }
 
+.dropdown-menu{
+  position: absolute !important;
+  z-index: 3;
+  background-color: white !important;
+}
 
 .form-button{
     font-size: 20px;
@@ -65,15 +92,15 @@ background-color: #EFEA07;
 }
 
 .banner {
-  margin-top: 50px;
+    margin-top: 115px;
+    padding-top: 15px;
     background: url("../img/backimage.jpg") 100% 38%;
     background-size: cover;
     display: flex;
     flex-wrap: wrap;
-    height: 300px;
+    height: 330px;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .banner h2 {

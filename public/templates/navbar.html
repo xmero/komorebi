@@ -1,43 +1,39 @@
- <header class="navbar navbar-default navbar-fixed-top">
+ <header>
         <nav>
-                <div class="navbar-default nav-main">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#!/"><img class="logo" src="./img/LOGO/logo1.png"></a>
-                        </li>
-                    </ul>
-                <div id="post-button">
-                <a href="#!/postitem"><button class="btn-success nav-button"> Regala un objeto!</button></a>
-                </div>
-                    <ul class="nav navbar-nav nav-menu" ng-controller="NavbarCtrl">
-                        <li ng-hide="loggedUser"><a href="#!/login">Iniciar sesión <i class="glyphicon glyphicon-user"></i></a></li>
-                        <li ng-hide="loggedUser"><a href="#!/register">Registrarse</a></li>
-                   
-                        <li class = "dropdown" ng-show="loggedUser">
-               <a class = "dropdown-toggle" data-toggle = "dropdown" href="#">Perfil <i class="glyphicon glyphicon-pencil"></i></a>
-            </a>
-            
-            <ul class = "dropdown-menu">
-                <li>
-                            <a  href="#!/private">Mi Perfil </a>
-                        </li>
-                            <li>
-                            <a  href="#!/private">Mis Productos </a>
-                        </li> 
-                             <li >
-                            <a  ng-click="logout()" href="#">Cerrar sesión</a>
-                        </li> 
-
-
-            </ul>
-            
-         </li>
-   
-                        <li ng-show="loggedUser">
-                            <a  href="#!/messages/{{loggedUser.id}}">Mensajes <span ng-show="unread">{{unread}}</span> <i class="glyphicon glyphicon-envelope"></i></a>
-                        </li>
-                    </ul>
-
+                <div class="navbar-default nav-main row">                 <div class="col-md-5 logo">
+                    
+                    <a href="#!/"><img class="img-responsive" src="./img/LOGO/logo1.png"></a>
+                    </div>     
+                    
+                    <div id="post-button" class="col-md-4 col-xs-12">
+                        <a href="#!/postitem"><button class=" nav-button"> Regala un objeto!</button></a>
+                    </div>
+                    <div class="col-md-3 nav-menu">              
+                        <ul class="nav navbar-nav " ng-controller="NavbarCtrl">
+                            <li ng-hide="loggedUser"><a href="#!/login">Iniciar sesión <i class="glyphicon glyphicon-user"></i></a></li>
+                            <li ng-hide="loggedUser"><a href="#!/register">Registrarse</a></li>
+                       
+                            <li class = "dropdown" ng-show="loggedUser">
+                                <a class = "dropdown-toggle" data-toggle = "dropdown" href="#">Perfil <i class="glyphicon glyphicon-pencil"></i></a>
+                                            
+                            <ul class = "dropdown-menu">
+                                <li>
+                                <a  href="#!/private">Mi Perfil </a>
+                                </li>
+                                    <li>
+                                    <a  href="#!/private">Mis Productos </a>
+                                </li> 
+                                     <li >
+                                    <a  ng-click="logout()" href="#">Cerrar sesión</a>
+                                </li> 
+                              </ul>
+                            </li>
+       
+                            <li ng-show="loggedUser">
+                                <a  href="#!/messages/{{loggedUser.id}}">Mensajes <span ng-show="unread">{{unread}}</span> <i class="glyphicon glyphicon-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
 <!-- comment-->
@@ -70,4 +66,5 @@
       </ul>
    </div> -->
         </nav>
+
     </header>
