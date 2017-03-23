@@ -1,109 +1,139 @@
-   <link rel="stylesheet" href="../css/user.css">
-   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-    <div class="user-container">
-        <div class="row">
-            <div class="col-sm-6 col-md-3 col-md-offset-2 user-img">
-                <img src="{{user.image}}" class="img-responsive" draggable="false" />
-            </div>
-            <div class="col-sm-6 col-md-6 col-md-offset-1 user-data">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                        <h4>{{user.username}}</h4>
-                         <div class="user-rating" ng-click="showReviews()">
-                    <div class="stars">
-                      <form action="">
-                        <input class="star star-1" id="star-1" type="radio" name="star"/>
-                        <label class="star star-1" for="star-1"></label>
-                        <input class="star star-2" id="star-2" type="radio" name="star"/>
-                        <label class="star star-2" for="star-2"></label>
-                        <input class="star star-3" id="star-3" type="radio" name="star"/>
-                        <label class="star star-3" for="star-3"></label>
-                        <input class="star star-4" id="star-4" type="radio" name="star"/>
-                        <label class="star star-4" for="star-4"></label>
-                        <input class="star star-5" id="star-5" type="radio" name="star"/>
-                        <label class="star star-5" for="star-5"></label>
-                      </form>
-                    </div>
-                    <p>15 reviews </p>
-                </div>
-                         <p class="user-location">{{user.location}}  <i class="glyphicon glyphicon-map-marker"></i></p>
-                                  <p>
-                            <i class="glyphicon glyphicon-envelope"></i> <a  data-target="#messageModal" data-toggle="modal">  Review user</a>
-                        </p>
-                        <p>
-                            <i class="glyphicon glyphicon-gift"></i>  Items given: <a href=""> 8</a> 
-                        </p>
-                        <p>
-                            <i class="glyphicon glyphicon-refresh"></i>  Items reused: <a href=""> 15 </a>
-                        </p>
-                    </div>
-                    <div class="col-sm-6 col-md-6 user-info">
-                        <h4>Some information </h4>
-                        <p>{{user.description}}</p>
-                    </div>
-                </div>
-            </div>
+<link rel="stylesheet" href="../css/user.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<div class="user-container">
+    <div class="row">
+        <div class="col-sm-6 col-md-3 col-md-offset-2 user-img">
+            <img src="{{user.image}}" class="img-responsive" draggable="false" />
         </div>
-    </div>
-
-    <!-- PRODUCTS TEST -->
-         <div class="row item-list container">
-         <div class="col-xs-12 col-md-3 product-info item" ng-repeat="product in products">
-                 <img src="{{ product.image }}" class="img-responsive">
-                <h3>{{ product.name }}</h3>
-                <p>Item location :  <span class="item-location "> {{ product.location }}</span>
-                <p>Description: </p></p>
-                <p>{{ product.description }}</p>
-            </div>
-                </div>
-    <!-- EO PRODUCTS TEST -->
-
-<section>
-
-    <div class="row" ng-show="reviews">
-
-      <div class="col-xs-12 col-md-3 item" ng-repeat="review in user.reviews">
-                    <div class="container">
-                        <h3>{{ review.reviewer }}</h3>
-                        <p>{{ review.rating }}</p>
-                       <p>{{ review.message }}</p>
-                    </div>
-                </div>
-</section>
-
-<!-- REVIEW MODAL -->
-
- <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Review the user</h4>
-                    </div>
-                    <form class="form" method="post" name="newProduct" action="/users/api/review">
-            <div class="modal-body">
-                <div >
-                    <div class="row">
-                        <div class="col-xs-12">
-                        <div>
-                                <input type="text" class="hidden" name="reviewed" value="{{ user.name }}"> 
-                                <input type="text " class="hidden" name="id" value="{{ user._id }}"> 
-                                <p>Enter your name:</p>
-                                <input type="text " name="reviewer" placeholder="User name ... ">  
-                                <p>Rating 0-5:</p>
-                                <input type="number" min="0" max="5" name="rating"> 
-                                <p>Write a brief message:</p>
-                                <textarea type="text" name="message" rows="5 " placeholder="Message... "></textarea>
+        <div class="col-sm-6 col-md-6 col-md-offset-1 user-data">
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <h1 ng-hide="editMode">{{user.username}}</h1>
+                    <button ng-hide="editMode" ng-click="editUserMode()" ng-if="user._id === loggedUser.id" class="btn-edit"><i class="glyphicon glyphicon-pencil"></i> Editar perfil </button>
+                    <div>
+                        <div class="form-group">
+                            <label ng-show="editMode">Username</label>
+                            <input ng-show="editMode" type="text" class="form-control" ng-model="username">
                         </div>
+                        <div class="form-group">
+                            <label ng-show="editMode">Email</label>
+                            <input ng-show="editMode" type="text" class="form-control" ng-model="email">
+                        </div>
+                        <div class="form-group">
+                            <label ng-show="editMode">Location</label>
+                            <input ng-show="editMode" type="text" class="form-control" ng-model="location">
+                        </div>
+                        <div class="form-group">
+                            <label ng-show="editMode">Imagen:</label>
+                            <input ng-show="editMode" name="file" type="file" ngf-select="fileSelected($files)" accept="'image/*'">
+                        </div>
+                    </div>
+                    <div ng-hide="editMode">
+                        <p class="user-location"><i class="glyphicon glyphicon-map-marker"></i>{{user.location}} </p>
+                        <p ng-if="user.reviews.length <= 1"> <i class="glyphicon glyphicon-star"></i> {{ user.reviews.length }} Opinión </p>
+                        <p ng-if="user.reviews.length >= 2"> <i class="glyphicon glyphicon-star"></i> {{ user.reviews.length }} Opiniones </p>
+                        <i class="glyphicon glyphicon-thumbs-up"></i> <a data-target="#messageModal" data-toggle="modal"> Dar opinión</a>
+                        </p>
+                        <p>
+                            <i class="glyphicon glyphicon-gift"></i> Productos: {{ products.length }}
+                        </p>
+                        <button ng-click="showItems()" ng-show="itemlist" class="showProd"> Ocultar Productos.</button>
+                        <button ng-click="showItems()" ng-hide="itemlist" class="showProd"> Mostrar Productos.</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 user-descr ">
+                    <h3>Descripción: </h3>
+                    <p ng-hide="editMode" >{{user.description}}</p>
+                    <textarea ng-show="editMode" type="text" class="form-control" ng-model="description"></textarea>
+                </div>
+            </div>
+                 <button ng-show="editMode" ng-click="editUserMode();editUser($event)" class="btn-save" ng-if="user._id === loggedUser.id"> Guardar </button>
+
+                <button ng-show="editMode" ng-click="editUserMode()" ng-if="user._id === loggedUser.id" class="btn-discard"> Descartar cambios </button>
+
+                <button data-target="#deletemodal" data-toggle="modal" ng-show="editMode" ng-if="user._id === loggedUser.id" class="btn btn-delete">Borrar usuario</button>
+        </div>  
+    </div>
+</div>
+<!-- PRODUCTS TEST -->
+<div class="row item-list" ng-show="itemlist">
+    <div class="col-xs-12 col-md-3 item" ng-repeat="product in products">
+         <a href="#!/detail/{{product._id}}"><div  ng-style="{ 'background-image': 'url({{ product.image}})' }" class="recipe-show img-responsive center-block"></div></a>
+
+ <div>
+                        <h3>{{ product.name }}</h3>
+
+                        <p class="free-icon" ng-if="product.free === 'free'">Disponible</p>
+                        <p class="reserved-icon" ng-if="product.free === 'reserved'">Reservado</p>
+                        <p class="given-icon" ng-if="product.free === 'given'">Regalado</p>
+                        
+                        
+                        <div class="container ">
+                        <p>Descripción:</p>
+                        <p>{{product.description}}</p>
+                        
+                         </div>
+                    </div>
+    </div>
+</div>
+<!-- EO PRODUCTS TEST -->
+<section>
+    <div class="row">
+        <div class="col-xs-12 col-md-3 item" ng-repeat="review in user.reviews">
+            <div class="container">
+                <h3>{{ review.reviewer }}</h3>
+                <p>{{ review.rating }}</p>
+                <p>{{ review.message }}</p>
             </div>
         </div>
-    </div>
-      </div>
-      <div class="modal-footer ">
-        <button type="submit " class="btn btn-primary form-button">Send</button>
-      </div>
-         </form>
+</section>
+<!-- REVIEW MODAL -->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Review the user</h4>
+            </div>
+            <form class="form" method="post" name="newProduct" action="/users/api/review">
+                <div class="modal-body">
+                    <div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                            
+                                    <input type="text" class="hidden" name="reviewed" value="{{ user.name }}">
+                                    <input type="text " class="hidden" name="id" value="{{ user._id }}">
+                                    <p>Introduce tu nombre:</p>
+                                    <input type="text " name="reviewer" placeholder="Nombre ... ">
+                                    <p>Puntuación de 0 a 5:</p>
+                                    <input type="number" min="0" max="5" name="rating">
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                    <p>Deja tu opinión:</p>
+                                    <textarea type="text" name="message" rows="5 " placeholder="Opinión... "></textarea>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar</button>
+                    <button type="submit " class="btn btn-primary form-button">Enviar</button>
+                </div>
+            </form>
         </div>
     </div>
-      </div>
+</div>
+
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Seguro que quieres borrar tu cuenta?</h4>
+            </div>
+            <div class="modal-body">
+            Si borras tu cuenta se borraran tus datos de forma permanente, incluyendo todos tus artículos.
+            </div>
+<button type="submit " ng-click="deleteUser()" class="btn btn-delete">Si!</button>
+            <button type="button" class="btn btn-save" data-dismiss="modal">Quiero mantener mi cuenta.</button>
+     </div>
+    </div>
+</div>

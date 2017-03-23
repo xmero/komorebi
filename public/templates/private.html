@@ -4,44 +4,6 @@
 <h1>{{ user.username }} edition area</h1>
 
 <div class= "row">
-<div class="text-center col-md-3">
-
-      <h3>Update User Data</h3>
-          <img src={{user.image}}>
-        <div class="form-group">
-          <label>Username</label>
-          <h4 ng-hide="editUserMode">{{user.username}}</h4>
-          <input ng-show="editUserMode" type="text" class="form-control" ng-model="username">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <p ng-hide="editUserMode">{{user.email}}</p>
-          <input ng-show="editUserMode" type="text" class="form-control" ng-model="email">
-        </div>
-        <div class="form-group">
-          <label>Location</label>
-          <p ng-hide="editUserMode">{{user.location}}</p>
-          <input ng-show="editUserMode" type="text" class="form-control" ng-model="location">
-        </div>
-        <div class="form-group">
-          <label>Description:</label>
-          <p ng-hide="editUserMode">{{user.description}}</p>
-          <input ng-show="editUserMode" type="text" class="form-control" ng-model="description">
-        </div>
-        <div class="form-group">
-          <label ng-show="editUserMode">Image:</label>
-          <input  ng-show="editUserMode" name="file" type="file" ngf-select="fileSelected($files)" accept="'image/*'">
-        </div>
-      <button ng-hide="editUserMode" ng-click="editUserMode = true" class="btn btn-info">Edit</button>
-      <button ng-show="editUserMode" ng-click="editUserMode = false ; editUser($event)" class="btn btn-info">Done</button>
-      <div >
-      <form  role="form" ng-submit='deleteUser($event)'>
-         <button type="submit"  class="btn btn btn-danger">
-          Delete User
-        </button>
-      </form>
-      </div>
-    </div>
     <div class="text-center col-md-9">
     <div class="row container">
          <div class="col-xs-12 col-md-3 product-info container" ng-repeat="product in products">

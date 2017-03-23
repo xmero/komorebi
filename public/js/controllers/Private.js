@@ -18,26 +18,6 @@ angular.module("SharingTreeApp")
             $scope.products = products;
         })
 
-        $scope.fileSelected = (files) => {
-          if (files && files.length) {
-            $scope.file = files[0];
-          }
-        }
-
-        $scope.editUser = (e) => {
-        e.preventDefault()
-        const url = '/upload' //node.js route
-          const file = $scope.file
-          Upload.upload({ url, file })
-            .success( ({imageLink}) => $scope.imageLink = imageLink )
-            .then(()=>{      
-              const { username, email, location, description} = $scope
-              const image = $scope.imageLink
-              UsersFactory.editUser(id, username, email, location, description, image  )
-                .then (() => window.location.reload() )
-                  })
-         }
-
     $scope.editProduct = (e, product) => {
       e.preventDefault()
       const url = '/upload' //node.js route
