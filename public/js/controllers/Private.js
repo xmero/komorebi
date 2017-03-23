@@ -18,37 +18,7 @@ angular.module("SharingTreeApp")
             $scope.products = products;
         })
 
-    $scope.editProduct = (e, product) => {
-      e.preventDefault()
-      const url = '/upload' //node.js route
-          const file = $scope.file
-          Upload.upload({ url, file })
-            .success( ({imageLink}) => $scope.imageLink = imageLink )
-            .then (()=> {
-          const { name, location, description, _id, free, postalCode} = product
-          const image = $scope.imageLink
-          ProductsFactory.editProduct(_id, name, location, description, image, free, postalCode)
-            .then(function(product) {
-            $scope.product = product
-            window.location.reload()
-        })
-      })
-    }
+   
 
-    $scope.deleteProduct = (e, pid) => {
-      e.preventDefault()
-      ProductsFactory.deleteProduct(pid)
-        .then( () => window.location.reload() )
-    }
-
-    $scope.deleteUser = (e) => {
-      e.preventDefault()
-      UsersFactory.deleteUser(id)
-        .then (() => $location.path('/'))
-        .then(() => {
-          delete $rootScope.loggedUser
-          StorageFactory.removeToken()
-    })
-    }
 })
 

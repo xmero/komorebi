@@ -1,0 +1,51 @@
+<div ng-style="{ 'background-image': 'url({{ $ctrl.product.image}})' }" class="recipe-show img-responsive center-block edit-img"></p>
+</div>
+    <p id="free-icon-edit" ng-if="$ctrl.product.free === 'free'">Disponible</p>
+                        <p id="reserved-icon-edit" ng-if="$ctrl.product.free === 'reserved'">Reservado</p>
+                        <p id="given-icon-edit" ng-if="$ctrl.product.free === 'given'">Regalado
+            <div>
+            <div>
+                
+                <p ng-show="editMode">Nombre:   </p>
+                    <h2 ng-hide="editMode">{{ $ctrl.product.name }}</h2>
+             
+                <input type="text" ng-show="editMode" ng-model="$ctrl.product.name">
+            </div>
+            <div>
+                
+                <p ng-show="editMode">Estado: </p>
+    
+                    <select type="text" ng-model="$ctrl.product.free" ng-show="editMode">
+                        <option selected="selected" value='free'>Disponible</option>
+                        <option value="reserved">Reservado</option>
+                        <option value="given">Regalado</option>
+                    </select>
+            </div>
+            <div>
+            <p ng-show="editMode">Localización:</p>
+                <input type="text" ng-show="editMode" ng-model="$ctrl.product.location">                
+            </div>
+                
+                <p ng-show="editMode">Descripción: </p>
+                <div ng-show="editMode">
+                    <textarea type="text" ng-model="$ctrl.product.description" style="width:100%"></textarea>
+                </div>
+                <p ng-show="editMode">Imagen:</p>
+                <input ng-show="editMode" ng-model="file" type="file" ngf-select="fileSelected($files)" accept="'image/*'">
+                <button ng-hide="editMode" ng-click="togEditMode()" class="btn btn-save">Editar</button>
+                <button ng-show="editMode" ng-click="togEditMode(); editProduct($event, $ctrl.product, file)" class="btn btn-save">Guardar</button>
+                <button ng-show="editMode" ng-click="togEditMode()" class="btn-discard"> Descartar cambios </button>
+                <button data-target="#deletemodal" data-toggle="modal" ng-show="editMode" ng-if="user._id === loggedUser.id" class="btn btn-delete">Eliminar</button>
+            </div>
+
+            <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Seguro que quieres borrar este artículo?</h4>
+            </div>
+<button type="submit " ng-click='deleteProduct($event, $ctrl.product._id)' class="btn btn-delete">Si!</button>
+            <button type="button" class="btn btn-discard" data-dismiss="modal">Cancelar.</button>
+     </div>
+    </div>
+</div>

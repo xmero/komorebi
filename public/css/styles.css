@@ -2,7 +2,7 @@
     box-sizing: border-box;
     font-family: 'Francois One', sans-serif;
     text-align: justify-all;
-    font-size: 16px;
+    font-size: 19px;
 }
 
 html {
@@ -212,7 +212,7 @@ color: black;
 .free-icon {
     position:absolute;
     margin-top: -15px;
-    width: 80px;
+    width: 85px;
     border-radius: 5px;
     background-color: #EFEA07;
     color: black;
@@ -221,7 +221,7 @@ color: black;
 .reserved-icon{
     position:absolute;
     margin-top: -15px;
-    width: 80px;
+    width: 85px;
     border-radius: 5px;
     background-color: #91F5AD;
     color: black;
@@ -230,7 +230,7 @@ color: black;
 .given-icon{
     position:absolute;
     margin-top: -15px;
-    width: 80px;
+    width: 85px;
     border-radius: 5px;
     background-color: #F79256;
     color: black;
@@ -252,6 +252,10 @@ color: black;
     background-color: black;
     padding: 10px;
     color:white;
+    position: absolute;
+    right: 0;
+    bottom: 30;
+    left: 0;
 }
 
 @media screen and (min-width: 300px) and (max-width: 520px) {
