@@ -55,7 +55,8 @@
         </div>  
     </div>
 </div>
-<!-- PRODUCTS TEST -->
+
+<!-- PRODUCT List -->
 <div class="row item-list" ng-show="itemlist">
     <div class="col-xs-12 col-md-3 item" ng-repeat="product in products">
          <a href="#!/detail/{{product._id}}"><div  ng-style="{ 'background-image': 'url({{ product.image}})' }" class="recipe-show img-responsive center-block"></div></a>
@@ -76,17 +77,21 @@
                     </div>
     </div>
 </div>
-<!-- EO PRODUCTS TEST -->
-<section>
-    <div class="row">
-        <div class="col-xs-12 col-md-3 item" ng-repeat="review in user.reviews">
-            <div class="container">
+<!--  REVIEW List -->
+<div class="container">
+        <div class="row review-list">
+        <div class="col-xs-12 col-md-3 review" ng-repeat="review in user.reviews">
+           
                 <h3>{{ review.reviewer }}</h3>
-                <p>{{ review.rating }}</p>
+                <p>Puntuación: {{ review.rating }}</p>
                 <p>{{ review.message }}</p>
-            </div>
+          
         </div>
-</section>
+        </div>
+</div>
+
+
+
 <!-- REVIEW MODAL -->
 <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">

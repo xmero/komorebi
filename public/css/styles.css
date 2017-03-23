@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Francois One', sans-serif;
     text-align: justify-all;
     font-size: 16px;
 }
@@ -148,8 +148,6 @@ background-color: #EFEA07;
     margin: 25px;
     padding: 0px;
     border-radius: 5px;
-  /*  box-shadow: 1px 1px 1px 1px grey;*/
- 
     max-width: 300px;
     max-height: 500px;
 }

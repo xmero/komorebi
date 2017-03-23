@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     text-align: justify-all;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Francois One', sans-serif;
 }
 
 html {
@@ -113,54 +113,26 @@ html {
     background-color: #EFEA07;
 }
 
-
-
-.container-reviews {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.container-reviews > div {
-    min-height: 280px;
-    background-color: white;
-    margin: 15px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 25px grey;
-    flex-direction: column;
-    border: 1px solid grey;
-    font-size: 13.3px;
-}
-
-.review-rating {
-    margin-left: 20%;
-}
-
-.review-img {
-    margin-top: 10%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.review-img img {
-    box-shadow: 2px 2px 25px grey;
-}
-
-.review-img p {
-    margin-top: 10%;
-    margin-left: 20%;
-}
-
-.container-reviews .user-info {
-    padding-top: 15px;
-}
-
 #messageModal input{
 margin-top: 5px;
 margin-bottom: 20px;
+}
+
+.review-list{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.review{
+    max-width: 200px;
+    max-height: 200px;
+    text-align: center;
+    margin: 25px;
+    border-radius: 4px;
+    border:0.5px solid grey;
+    box-shadow: 1px 1px 1px grey;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 @media screen and (min-width: 300px) and (max-width: 520px) {
@@ -190,6 +162,9 @@ width:50%;
 .btn-discard{
 margin-left: 50%;
    width:50%; 
+}
+.review-list{
+    justify-content: center;
 }
 
 }
