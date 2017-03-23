@@ -15,6 +15,15 @@ html {
     padding-bottom: 5%;
 }
 
+.user-data {
+    
+    margin-top: 36px;
+    max-width: 450px;
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px grey;
+}
 .user-data p{
  padding-top: 15px;
 }
@@ -26,15 +35,6 @@ html {
     max-height: 400px;
 }
 
-.user-data {
-    margin-left: 10px;
-    margin-top: 36px;
-    max-width: 550px;
-    border: 1px solid grey;
-    padding: 20px;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px 1px grey;
-}
 
 .user-location {
     font-size: 10px;
@@ -52,7 +52,7 @@ html {
     padding: 9px;
     border: 0;
     border-radius: 3px;
-    background-color: #EFEA07;
+    background-color: #FCFF00;
     text-decoration: none;
     cursor: pointer;
     cursor: hand;
@@ -69,20 +69,20 @@ html {
     padding: 9px;
     border: 0;
     border-radius: 3px;
-    background-color: #EFEA07;
+    background-color: #FCFF00;
     text-decoration: none;
     cursor: pointer;
     cursor: hand;
     color: black;
 }
 .btn-cancel{
-     background-color: #EFEA07;
+     background-color: #FCFF00;
      font-size: 15px;
 }
 
 .btn-discard{
     font-size: 15px;
-    width: 20%;
+    width: 100px;
     padding: 5px;
     border: 0;
     border-radius: 3px;
@@ -91,12 +91,14 @@ html {
     cursor: pointer;
     cursor: hand;
     color: black;
-    margin-left: 80%;
+    margin-left: 75%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .btn-delete{
     font-size: 15px;
-    width: 20%;
+    width: 100px;
     padding: 5px;
     border: 0;
     border-radius: 3px;
@@ -105,10 +107,10 @@ html {
     cursor: pointer;
     cursor: hand;
     color: black;
-    margin-left: 80%;
+    margin-left: 75%;
 }
 .modal-header{
-    background-color: #EFEA07;
+    background-color: #FCFF00;
 }
 
 #messageModal input{

@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     font-family: 'Francois One', sans-serif;
-    text-align: justify-all;
     font-size: 19px;
 }
 
@@ -35,13 +34,13 @@ html {
 }
 
 .nav-menu li:hover {
-background-color: #EFEA07;
+background-color: #FCFF00;
 }
 
   
 
 .nav-menu li ul a:hover {
-background-color: #EFEA07;
+background-color: #FCFF00;
 }
 
 #post-button{
@@ -54,7 +53,7 @@ background-color: #EFEA07;
 .nav-button {
     border-radius: 3px;
     margin-top: 10px;
-    background-color: #EFEA07;
+    background-color: #FCFF00;
     width: 200px;
     height: 40px;
     font-size: 20px;
@@ -81,7 +80,7 @@ background-color: #EFEA07;
     display: inline-block;
     border: 0;
     border-radius: 3px;
-    background-color: #EFEA07;
+    background-color: #FCFF00;
     text-decoration: none;
     cursor: pointer;
     cursor: hand;
@@ -106,7 +105,7 @@ background-color: #EFEA07;
 }
 
 .banner h2 {
-    color: #EFEA07;
+    color: #FCFF00;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-size: 55px;
     display: flex;
@@ -214,7 +213,7 @@ color: black;
     margin-top: -15px;
     width: 85px;
     border-radius: 5px;
-    background-color: #EFEA07;
+    background-color: #FCFF00;
     color: black;
     text-align: center;
 }
@@ -248,13 +247,14 @@ color: black;
 }
 
 .about {
-    text-align: center;
-    background-color: black;
+    text-align: right;
+    background-color: #31393C;
     padding: 10px;
+    margin:0px;
     color:white;
     position: absolute;
     right: 0;
-    bottom: 30;
+    bottom: 2;
     left: 0;
 }
 

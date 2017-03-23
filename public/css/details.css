@@ -35,7 +35,7 @@ margin-left: -15px;
     width: 100%;
     padding: 15px;
     border-radius: 3px;
-    background-color: #EFEA07;
+    background-color: #FCFF00;
     text-decoration: none;
     cursor: pointer;
     cursor: hand;
@@ -84,14 +84,14 @@ margin-left: -15px;
 
 
 .modal-header{
-background-color: #EFEA07;
+background-color: #FCFF00;
 }
 .modal-text{
   width: 100%;
   min-height: 70px;
 }
 
-@media screen and (min-width: 300px) and (max-width: 520px) {
+@media screen and (min-width: 300px) and (max-width: 700px) {
 .detail {
 margin-top: 200px;
 }

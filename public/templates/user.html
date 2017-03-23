@@ -46,11 +46,15 @@
                     <textarea ng-show="editMode" type="text" class="form-control" ng-model="description"></textarea>
                 </div>
             </div>
+                
+                
                  <button ng-show="editMode" ng-click="editUserMode();editUser($event)" class="btn-save" ng-if="user._id === loggedUser.id"> Guardar </button>
+            <div>
 
                 <button ng-show="editMode" ng-click="editUserMode()" ng-if="user._id === loggedUser.id" class="btn-discard"> Descartar cambios </button>
 
                 <button data-target="#deletemodal" data-toggle="modal" ng-show="editMode" ng-if="user._id === loggedUser.id" class="btn btn-delete">Borrar usuario</button>
+            </div>
         </div>  
     </div>
 </div>

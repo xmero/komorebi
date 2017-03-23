@@ -1,42 +1,46 @@
-<table class="">
+<link rel="stylesheet" href="../css/messages-view.css">
+<div class='table-container'>
   <a  href="#!/messages/{{loggedUser.id}}">Back to Messages</a>
+
+<table class="message-view">
   <thead>
       <tr>
-          <th>From</th>
-          <th>Subject</th>
-          <th>Body</th>
-          <th ng-if="message.sender === loggedUser.id">Sent</th>
-          <th ng-if="message.sender != loggedUser.id">Received</th>
+          <th>De.</th>
+          <th>Tema.</th>
+          <th>Mensaje.</th>
+          <th ng-if="message.sender === loggedUser.id">Enviado</th>
+          <th ng-if="message.sender != loggedUser.id">Recibido</th>
       </tr>
   </thead>
   <tbody>
     <tr >
       <td>
-        <p>{{message.from}}</p>
+        {{message.from}}
       </td>
         <td class="message_subject">
-          <p>{{message.subject}}</p>
+          {{message.subject}}
         </td>
         <td class="message_body">
-          <p>{{message.body}}</p>
+          {{message.body}}
         </td>
-        <td class="" >
+        <td class="message-data" >
           <p >{{message.timestamp | date : 'short'}}</p>
         </td>
         <td>
-          <button  ng-if="message.sender != loggedUser.id" data-target="#messageModal" data-toggle="modal" class="btn btn-request">Answer</button>
-          <button  ng-if="message.sender === loggedUser.id" data-target="#messageModal" data-toggle="modal" class="btn btn-request">Send message</button>
+          <button  ng-if="message.sender != loggedUser.id" data-target="#messageModal" data-toggle="modal" class="btn btn-save">Responder</button>
+          <button  ng-if="message.sender === loggedUser.id" data-target="#messageModal" data-toggle="modal" class="btn btn-save">Enviar mensaje</button>
+        </td>
+        <td class="text-center">
+          <a href="#!/messages/{{loggedUser.id}}" ng-click="editMessage(message._id)" >Marcar como no leído</a>
         </td>
         <td>
-          <a href="#!/messages/{{loggedUser.id}}" ng-click="editMessage(message._id)" >Mark as Unread</a>
-        </td>
-        <td>
-          <a href="#!/messages/{{message.recipient}}" ng-if="message.sender === loggedUser.id" ng-click="deleteMessage(message._id)" class="btn btn-danger" >DELETE</a>
+          <a href="#!/messages/{{message.recipient}}" ng-if="message.sender === loggedUser.id" ng-click="deleteMessage(message._id)" class="btn btn-delete" >Eliminar</a>
         </td>
     </tr>
   </tbody>
 </table>
 
+</div>
 
 <!-- Message Modal -->
        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -45,20 +49,20 @@
                 <form class="form" ng-submit='addMessage($event)' >
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Send Message</h4>
+                        <h4 class="modal-title" id="myModalLabel">Enviar mesaje</h4>
                     </div>
                     <div class="modal-body">
                         <div class="container">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-4">
-                                <textarea ng-model="messageBody"  cols="30 " rows="5 " placeholder="Hello, my name is ... and I'd like to have this item because ... "></textarea>
+                                <textarea ng-model="messageBody"  cols="30 " rows="5 " placeholder="Escribe tu mensaje... "></textarea>
             </div>
         </div>
     </div>
       </div>
       <div class="modal-footer ">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary form-button" onclick="$('.modal').modal('hide')" >Send</button>
+                     <button type="button" class="btn btn-discard" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class=" btn-save form-button" onclick="$('.modal').modal('hide')" >Enviar</button>
       </div>
     </form>
     </div>

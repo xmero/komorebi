@@ -1,22 +1,22 @@
    <link rel="stylesheet" href="../css/details.css">
 
         <div class="row detail">
-            <div class="col-xs-12 col-md-7">
+            <div class="col-xs-12 col-sm-7">
                 <img src="{{ product.image }}" class="prod-img img-responsive">
             </div>
-            <div class="col-xs-12 col-md-5 ">
+            <div class="col-xs-12 col-sm-5 ">
                 <div class="request-button">    
                 <button ng-show="loggedUser" ng-if="product.free != 'given'" href="" data-target="#messageModal" data-toggle="modal" class="btn">Pedir!</button>
                 </div>
             <div class="row product-info">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-sm-6">
                     <h1>{{ product.name }}</h1>
                     <p class="item-location"><i class="glyphicon glyphicon-map-marker"></i>Localizacion :  {{ product.location }}</p>
                     <p>Descripción: </p>
                     <p>{{ product.description }}</p>
                  </div>
 
-                <div class="user-info col-xs-12 col-md-6 ">
+                <div class="user-info col-xs-12 col-sm-6 ">
                     <div>
                         <a href="#!/users/{{product.owner._id}}"><img class="img-responsive" src="{{ product.owner.image }}">{{ product.owner.username }}</a>
                     </div>
