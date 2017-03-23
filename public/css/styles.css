@@ -1,8 +1,8 @@
 * {
     box-sizing: border-box;
     font-family: 'Anton', sans-serif;
-     text-align: justify-all;
-     font-size: 16px;
+    text-align: justify-all;
+    font-size: 16px;
 }
 
 html {
@@ -10,16 +10,17 @@ html {
 }
 
 .navbar-default {
-    background-color: white;
-    border: none;
-    position: fixed;
+  background-color: white;
+  border: none;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  margin: none;
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
  }
   
 .logo img{
@@ -47,6 +48,7 @@ background-color: #EFEA07;
   display:flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
 }
 
 .nav-button {
@@ -156,7 +158,7 @@ background-color: #EFEA07;
     box-shadow: 1px 1px 1px 1px grey;
 }
 
-.item img {
+.recipe-show {
     align-self: center;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -164,6 +166,7 @@ background-color: #EFEA07;
     height: 200px;
     background-size: cover;  
 }
+
 
 .item > div {
     display: flex;
@@ -251,4 +254,11 @@ color: black;
     background-color: black;
     padding: 10px;
     color:white;
+}
+
+@media screen and (min-width: 300px) and (max-width: 520px) {
+  .banner{
+    margin-top: 200px;
+  }
+
 }

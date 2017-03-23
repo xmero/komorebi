@@ -1,17 +1,15 @@
 * {
     box-sizing: border-box;
     text-align: justify-all;
-    /*font-family: 'Comfortaa', cursive;*/
-    font-family: 'Arvo', serif;
+    font-family: 'Anton', sans-serif;
 }
-
 
 html {
     overflow-x: hidden;
 }
 
 .user-container {
-    background-color: #F1F2F2;
+    margin-top: 110px;
     width: 100%;
     padding-bottom: 5%;
 }
@@ -29,7 +27,6 @@ html {
     margin-top: 36px;
     border-radius: 20px;
     max-width: 400px;
-    box-shadow: 2px 2px 15px grey;
     max-height: 400px;
 }
 

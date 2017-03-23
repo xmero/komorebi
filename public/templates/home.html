@@ -5,7 +5,7 @@
          <div class="col-xs-12 col-md-3 item" ng-repeat="product in products | filter:{ location: city, name: keyword, postalCode: CP, free: status }">
        
 
-                    <a href="#!/detail/{{product._id}}"><img src="{{ product.image }}"></a>
+                    <a href="#!/detail/{{product._id}}"><div  ng-style="{ 'background-image': 'url({{ product.image}})' }" class="recipe-show img-responsive center-block"></div></a>
                     <div>
                         <h3>{{ product.name }}</h3>
 
