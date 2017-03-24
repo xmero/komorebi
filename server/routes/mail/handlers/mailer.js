@@ -19,8 +19,15 @@ const { name, product, email, messageBody} = req.body
 let mailOptions = {
     from: process.env.EMAILER, 
     to: `${email}`,
-    subject: `Product request from ${name}`, 
-    text: `Item requested: ${product} Message: ${messageBody}. You can answer through the internal messaging function.`,  
+    subject: `Solicitud de ${name}`, 
+    text: `Producto: ${product} \n Message: ${messageBody}.\n`,  
+    html: `<h2>Nueva solicitud de producto</h2>
+        <table>
+          <tr><th>Producto:</th><th>Mensaje:</th></tr>
+          <tr><td><h3>${product}</h3></td></tr>
+          <tr><td colspan="3"><h3>${message}</td></tr>
+        </table>
+        <p>Puedes contestar con el sistema de mensajería integrado de la aplicación.</p>`
     }
 
 console.log("Sending email")
