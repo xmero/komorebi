@@ -17,7 +17,9 @@ A place to share items without restrictions.
 This is my final project at SkylabCoders. 
 
 
-#### Prerequisites :
+### Prerequisites :
+
+---
 
 You need to have git and node installed on your machine. To install them go to your terminal then type:
 sudo apt-get install git -g
@@ -30,7 +32,9 @@ It's super easy. Just takes two steps :
 Download the zip file or clone the repository
 Open your terminal inside the downloaded folder and type npm install
 
-##### Enviroment variables:
+### Enviroment variables:
+
+---
 
 To run this code you will need to set your own enviroment variables:
 
@@ -50,7 +54,9 @@ EMAIL_PASS=+++++++
 Connect to database:
 DB_URI=+++++++
 
-##### Api:
+### Api:
+
+---
 
 The server part has multiple Api endpoints using several routes:
 
