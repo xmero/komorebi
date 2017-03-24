@@ -60,10 +60,10 @@ DB_URI=+++++++
 
 The server part has multiple Api endpoints using several routes:
 
-  '/api' : serves the authentication options, register and login.
-  '/private' : serves the user editing options.
-  '/messages': serves the internal messaging function.
-  '/products/api' : serves information about the products.
-  '/users/api' : serves information about the users.
-  '/sendmail': serves the emailing function.
-  '/upload': serves the routes to upload pictures.
+  + '/api' : serves the authentication options, register and login.
+  + '/private' : serves the user editing options.
+  + '/messages': serves the internal messaging function.
+  + '/products/api' : serves information about the products.
+  + '/users/api' : serves information about the users.
+  + '/sendmail': serves the emailing function.
+  + '/upload': serves the routes to upload pictures.
