@@ -28,7 +28,7 @@ console.log("Sending email")
 transporter.sendMail( mailOptions,
     (err, response) => { 
     if (err) {
-        res.send("We had problems sending the email")
+        res.send("Problemas al enviar el email.")
     }
     res.redirect("/")
 })

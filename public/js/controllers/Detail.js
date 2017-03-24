@@ -38,11 +38,11 @@ angular.module("SharingTreeApp")
         const from = $scope.username
         const to = $scope.product.owner.username
         const recipient = $scope.product.owner._id
-        const subject = `${$scope.product.name} requested.`
+        const subject = `${$scope.product.name} solicitado.`
         const body = $scope.messageBody
         MessagesFactory.addMessage(streamId, association, sender, recipient, subject, body, product, from, to)
             .then(() => {
-                console.log('Message Added!')
+                console.log('Mensaje añadido!')
             })
     }
 })
