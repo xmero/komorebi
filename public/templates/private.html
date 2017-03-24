@@ -3,4 +3,8 @@
         <div class="col-xs-12 col-md-3 edit-item " ng-repeat="product in products">
             <togle-edit product=product ></togle-edit>
         </div>
+        <div ng-hide="products.length"><h2>
+          
+         Aún no tienes ningún producto!</h2>
+         </div>
     </div>

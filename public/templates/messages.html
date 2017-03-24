@@ -22,7 +22,7 @@
       </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="message in messages | filter:{status: status }">
+    <tr ng-repeat="message in messages | filter:{status: status } | orderBy : '-timestamp'">
       <td>
         {{message.from}}
       </td>

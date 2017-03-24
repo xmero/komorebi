@@ -31,7 +31,7 @@
                         <p class="user-location"><i class="glyphicon glyphicon-map-marker"></i>{{user.location}} </p>
                         <p ng-if="user.reviews.length <= 1"> <i class="glyphicon glyphicon-star"></i> {{ user.reviews.length }} Opinión </p>
                         <p ng-if="user.reviews.length >= 2"> <i class="glyphicon glyphicon-star"></i> {{ user.reviews.length }} Opiniones </p>
-                        <i class="glyphicon glyphicon-thumbs-up"></i> <a data-target="#messageModal" data-toggle="modal"> Dar opinión</a>
+                         <a data-target="#messageModal" ng-if="user._id != loggedUser.id" data-toggle="modal"><i class="glyphicon glyphicon-thumbs-up"></i> Dar opinión</a>
                         </p>
                         <p>
                             <i class="glyphicon glyphicon-gift"></i> Productos: {{ products.length }}
