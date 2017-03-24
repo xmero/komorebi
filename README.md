@@ -17,11 +17,16 @@ A place to share items without restrictions.
 This is my final project at SkylabCoders. 
 
 
-####Prerequisites :
+### Prerequisites :
+
+---
 
 You need to have git and node installed on your machine. To install them go to your terminal then type:
+
 sudo apt-get install git -g
+
 sudo apt-get install node -g
+
 For windows users consult the Git and Node documentations.
 
 Installing the web-app in your local machine
@@ -30,34 +35,45 @@ It's super easy. Just takes two steps :
 Download the zip file or clone the repository
 Open your terminal inside the downloaded folder and type npm install
 
-##### Enviroment variables:
+### Enviroment variables:
+
+---
 
 To run this code you will need to set your own enviroment variables:
-
 For passport encryption
+
 SECRET=+++++++ 
 
-Setting the upload image function.
-CLOUDINARY_NAME=+++++++
-CLOUDINARY_API=+++++++
-CLOUDINARY_API_SECRET= =+++++++
-UPLOAD_FOLDER=./uploadFolder
++ Setting the upload image function.
 
-Setting emailer:
-EMAILER=+++++++
-EMAIL_PASS=+++++++
+    CLOUDINARY_NAME=+++++++
 
-Connect to database:
+    CLOUDINARY_API=+++++++
+
+    CLOUDINARY_API_SECRET= =+++++++
+
+    UPLOAD_FOLDER=./uploadFolder
+
++ Setting emailer:
+
+    EMAILER=+++++++
+
+    EMAIL_PASS=+++++++
+
++ Connect to database:
+
 DB_URI=+++++++
 
-##### Api:
+### Api:
+
+---
 
 The server part has multiple Api endpoints using several routes:
 
-  '/api' : serves the authentication options, register and login.
-  '/private' : serves the user editing options.
-  '/messages': serves the internal messaging function.
-  '/products/api' : serves information about the products.
-  '/users/api' : serves information about the users.
-  '/sendmail': serves the emailing function.
-  '/upload': serves the routes to upload pictures.
+  + '/api' : serves the authentication options, register and login.
+  + '/private' : serves the user editing options.
+  + '/messages': serves the internal messaging function.
+  + '/products/api' : serves information about the products.
+  + '/users/api' : serves information about the users.
+  + '/sendmail': serves the emailing function.
+  + '/upload': serves the routes to upload pictures.
