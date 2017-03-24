@@ -17,7 +17,7 @@ A place to share items without restrictions.
 This is my final project at SkylabCoders. 
 
 
-####Prerequisites :
+#### Prerequisites :
 
 You need to have git and node installed on your machine. To install them go to your terminal then type:
 sudo apt-get install git -g
