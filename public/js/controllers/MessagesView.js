@@ -31,9 +31,6 @@ angular.module("SharingTreeApp")
             .then(()=>{
                 window.alert("Mensaje enviado!") 
             })
-            .then(()=>{
-                window.location.reload() 
-            })
           }
 
         $scope.deleteMessage = (e) => {

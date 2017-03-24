@@ -5,7 +5,7 @@
 
     .factory('AuthFactory', function($http, $q, $rootScope, $location, StorageFactory, jwtHelper) {
 
-    function login(credentials) {
+    function login(credentials, err) {
       const url = '/api/login'
       return $http.post(url, credentials)
         .then( response => response.data.token )
@@ -13,6 +13,9 @@
           StorageFactory.saveToken(token)
           return token
         })
+        .catch(err  => {
+                window.alert("Usuario o pasword incorrecto!") 
+            })
     }
 
     function register(credentials) {

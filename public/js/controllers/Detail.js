@@ -24,9 +24,9 @@ angular.module("SharingTreeApp")
         const email = $scope.product.owner.email
         const messageBody = $scope.messageBody
         MessagesFactory.sendEmail(name, product, email, messageBody)
-          .then(()=>{
-            console.log('Email sent from the controller')
-          })
+            .then(()=>{
+                window.alert("Mensaje y email enviados al usuario.") 
+            })
       }
 
       $scope.addMessage = (e) => {
