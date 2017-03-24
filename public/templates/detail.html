@@ -20,7 +20,7 @@
                 <div>
                     <a href="#!/users/{{product.owner._id}}"><img class="img-responsive" src="{{ product.owner.image }}">{{ product.owner.username }}</a>
                 </div>
-                <p ng-if="product.owner.reviews.length <= 1" ng-show="product.owner.reviews">{{ product.owner.reviews.length }} Opinión </p>
+                <p ng-if="product.owner.reviews.length === 1">{{ product.owner.reviews.length }} Opinión </p>
                 <p ng-if="product.owner.reviews.length >= 2" >{{ product.owner.reviews.length }} Opiniones </p>
             </div>
         </div>
