@@ -28,8 +28,7 @@ angular.module("SharingTreeApp")
         const subject= `Answer to ${$scope.message.product} request.`
         const body = $scope.messageBody
        MessagesFactory.addMessage( streamId, association, sender, recipient, subject, body ,product ,from, to )
-            .then(()=>{
-              console.log('Message Added!')
+            .then(()=>{() => window.location.reload()
             })
           }
 

@@ -25,7 +25,7 @@ td, th {
 }
 
 .message_body{
-  height: 130px;
+  min-height: 130px;
 }
 
 .message_subject{
@@ -78,15 +78,16 @@ td, th {
     color: white;
 }
 
+
 @media 
-only screen and (max-width: 1200px),
-(min-device-width: 500px) and (max-device-width: 1024px)  {
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
 
 .table-container{
-  margin-top: 200px;
+  margin-top: 0px;
   max-width: 400px;
   overflow: hidden;
-  
+
 }
   /* Force table to not be like tables anymore */
   table, thead, tbody, th, td, tr { 
@@ -120,6 +121,10 @@ only screen and (max-width: 1200px),
     padding-right: 10px; 
     white-space: nowrap;
   }
+
+  .message_body{
+  min-height: 100px;
+}
   
 
   /*

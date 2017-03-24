@@ -11,7 +11,7 @@
                     <button ng-hide="editMode" ng-click="editUserMode()" ng-if="user._id === loggedUser.id" class="btn-edit"><i class="glyphicon glyphicon-pencil"></i> Editar perfil </button>
                     <div>
                         <div class="form-group">
-                            <label ng-show="editMode">Username</label>
+                            <label ng-show="editMode">Nombre de usuario</label>
                             <input ng-show="editMode" type="text" class="form-control" ng-model="username">
                         </div>
                         <div class="form-group">
@@ -72,9 +72,10 @@
                         <p class="given-icon" ng-if="product.free === 'given'">Regalado</p>
                         
                         
-                        <div class="container ">
-                        <p>Descripción:</p>
-                        <p>{{product.description}}</p>
+                        <div class="description">
+
+                            <p>Descripción:</p>
+                            <p>{{product.description}}</p>
                         
                          </div>
                     </div>

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../css/messages-view.css">
 <div class='table-container'>
-  <a  href="#!/messages/{{loggedUser.id}}">Back to Messages</a>
+  <a  href="#!/messages/{{loggedUser.id}}">Volver a mensajes</a>
 
 <table class="message-view">
   <thead>
@@ -13,7 +13,7 @@
       </tr>
   </thead>
   <tbody>
-    <tr >
+    <tr ng-class="(message.status=='not') ? 'not' : " >
       <td>
         {{message.from}}
       </td>
