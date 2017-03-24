@@ -44,17 +44,24 @@ For passport encryption
 
 SECRET=+++++++ 
 
-Setting the upload image function.
++ Setting the upload image function.
+
 CLOUDINARY_NAME=+++++++
+
 CLOUDINARY_API=+++++++
+
 CLOUDINARY_API_SECRET= =+++++++
+
 UPLOAD_FOLDER=./uploadFolder
 
-Setting emailer:
++ Setting emailer:
+
 EMAILER=+++++++
+
 EMAIL_PASS=+++++++
 
-Connect to database:
++ Connect to database:
+
 DB_URI=+++++++
 
 ### Api:
