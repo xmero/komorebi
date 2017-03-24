@@ -11,7 +11,6 @@ function register(req, res) {
     }
     res.json({success: true, msg: 'Successful created new user.'})
   })
-
 }
 
 module.exports = register

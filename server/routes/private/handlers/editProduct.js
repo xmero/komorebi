@@ -18,6 +18,5 @@ module.exports = (req,res) => {
       res.json(product) 
     })
     .catch( err => res.status(500).json(err) )
-
 }
 

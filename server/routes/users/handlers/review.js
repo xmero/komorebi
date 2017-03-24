@@ -2,7 +2,6 @@ const User = require(__base+'models/User')
 
 module.exports = (req,res) => {
 
-
   const {  id, reviewer, reviewed, rating, message } = req.body
   
   User.findByIdAndUpdate(

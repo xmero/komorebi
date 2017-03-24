@@ -1,5 +1,6 @@
 const User = require(__base+'models/User')
 const Product = require(__base+'models/Product')
+
 module.exports = (req,res) => {
 
   const id = req.params.id

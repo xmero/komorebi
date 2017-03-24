@@ -7,7 +7,6 @@ const editUser = require('./handlers/editUser')
 const deleteUser = require('./handlers/deleteUser')
 const editProduct = require('./handlers/editProduct')
 
-
 // all these routes require JWT token
 router.use( passport.authenticate('jwt', { session: false }) )
 

@@ -1,6 +1,6 @@
 angular.module("SharingTreeApp")
 
-.controller('MessagesViewCtrl', function($scope,$location, $rootScope, $routeParams, MessagesFactory, UsersFactory) {
+.controller('MessagesViewCtrl', function($scope, $location, $rootScope, $routeParams, MessagesFactory, UsersFactory) {
     $rootScope.section = 'messageView'
 
     const id = $routeParams
@@ -10,35 +10,35 @@ angular.module("SharingTreeApp")
             $scope.message = message;
         })
 
-      $scope.editMessage = (msgid) => {
+    $scope.editMessage = (msgid) => {
         const status = "not"
         MessagesFactory.editMessage(msgid, status)
-        .then(() => console.log('Message marked as Unreaded'))
-        }
-    
+            .then(() => console.log('Message marked as Unreaded'))
+    }
+
     $scope.addMessage = (e) => {
         e.preventDefault()
         const streamId = 'testing'
         const association = $scope.message.association
         const product = $scope.message.product
-        const sender= $scope.loggedUser.id
+        const sender = $scope.loggedUser.id
         const from = $scope.message.to
         const to = $scope.message.from
-        const recipient= $scope.message.sender
-        const subject= `Answer to ${$scope.message.product} request.`
+        const recipient = $scope.message.sender
+        const subject = `Answer to ${$scope.message.product} request.`
         const body = $scope.messageBody
-       MessagesFactory.addMessage( streamId, association, sender, recipient, subject, body ,product ,from, to )
-            .then(()=>{
-                window.alert("Mensaje enviado!") 
+        MessagesFactory.addMessage(streamId, association, sender, recipient, subject, body, product, from, to)
+            .then(() => {
+                window.alert("Mensaje enviado!")
             })
-          }
+    }
 
-        $scope.deleteMessage = (e) => {
-            MessagesFactory.deleteMessage(id.id)
-            .then(()=>{
-              console.log('Message deleted!')
+    $scope.deleteMessage = (e) => {
+        MessagesFactory.deleteMessage(id.id)
+            .then(() => {
+                console.log('Message deleted!')
             })
-        }
+    }
 
 
 })

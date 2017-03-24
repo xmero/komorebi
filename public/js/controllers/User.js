@@ -1,6 +1,6 @@
 angular.module("SharingTreeApp")
 
-.controller('UserCtrl', function($scope, $rootScope, $routeParams,Upload, UsersFactory, StorageFactory,$location) {
+.controller('UserCtrl', function($scope, $rootScope, $routeParams, Upload, UsersFactory, StorageFactory, $location) {
     $rootScope.section = 'user'
     const id = $routeParams
 
@@ -36,31 +36,31 @@ angular.module("SharingTreeApp")
         })
 
     $scope.fileSelected = (files) => {
-    if (files && files.length) {
-    $scope.file = files[0];
-    }
+        if (files && files.length) {
+            $scope.file = files[0];
+        }
     }
 
     $scope.editUser = (e) => {
         e.preventDefault()
         const url = '/upload' //node.js route
-          const file = $scope.file
-          Upload.upload({ url, file })
-            .success( ({imageLink}) => $scope.imageLink = imageLink )
-            .then(()=>{      
-              const { username, email, location, description} = $scope
-              const image = $scope.imageLink
-              UsersFactory.editUser(id.id, username, email, location, description, image  )
-                .then (() => window.location.reload() )
-                  })
-         }
+        const file = $scope.file
+        Upload.upload({ url, file })
+            .success(({ imageLink }) => $scope.imageLink = imageLink)
+            .then(() => {
+                const { username, email, location, description } = $scope
+                const image = $scope.imageLink
+                UsersFactory.editUser(id.id, username, email, location, description, image)
+                    .then(() => window.location.reload())
+            })
+    }
 
     $scope.deleteUser = () => {
-      UsersFactory.deleteUser(id.id)
-        .then (() => $location.path('/'))
-        .then(() => {
-          delete $rootScope.loggedUser
-          StorageFactory.removeToken()
-    })
+        UsersFactory.deleteUser(id.id)
+            .then(() => $location.path('/'))
+            .then(() => {
+                delete $rootScope.loggedUser
+                StorageFactory.removeToken()
+            })
     }
 })

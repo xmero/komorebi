@@ -1,8 +1,8 @@
 angular.module("SharingTreeApp")
 
-    .config( function ($httpProvider) {
+.config(function($httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor')
-  })
+})
 
 .config(function($routeProvider) {
     $routeProvider
@@ -25,34 +25,34 @@ angular.module("SharingTreeApp")
             secure: true
         })
 
-         .when('/login',{
+    .when('/login', {
             templateUrl: '/templates/login.html',
             controller: 'LoginCtrl'
         })
-        .when('/register',{
+        .when('/register', {
             templateUrl: '/templates/register.html',
             controller: 'RegisterCtrl'
         })
-      
-        .when('/private',{
-            templateUrl: '/templates/private.html',
-            controller: 'PrivateCtrl',
-            secure: true
-        })
 
-        .when('/postitem', {
-            templateUrl: '/templates/post-items.html',
-            controller: 'AddProductCtrl',
-            secure: true
-        })
+    .when('/private', {
+        templateUrl: '/templates/private.html',
+        controller: 'PrivateCtrl',
+        secure: true
+    })
 
-        .when('/messages/:id', {
-            templateUrl: '/templates/messages.html',
-            controller: 'MessagesCtrl',
-            secure: true
-        })
+    .when('/postitem', {
+        templateUrl: '/templates/post-items.html',
+        controller: 'AddProductCtrl',
+        secure: true
+    })
 
-        .when('/messages/view/:id', {
+    .when('/messages/:id', {
+        templateUrl: '/templates/messages.html',
+        controller: 'MessagesCtrl',
+        secure: true
+    })
+
+    .when('/messages/view/:id', {
             templateUrl: '/templates/message-view.html',
             controller: 'MessagesViewCtrl',
             secure: true
@@ -62,19 +62,19 @@ angular.module("SharingTreeApp")
         })
 })
 
-.run(function($rootScope, $location, StorageFactory, AuthFactory){
+.run(function($rootScope, $location, StorageFactory, AuthFactory) {
 
-      if ( AuthFactory.isLoggedIn() ) {
+    if (AuthFactory.isLoggedIn()) {
         const token = StorageFactory.readToken()
         AuthFactory.setCredentials(token)
-      }
+    }
 
-      $rootScope.$on('$routeChangeStart', function (event, next, current) {
+    $rootScope.$on('$routeChangeStart', function(event, next, current) {
 
-        if(next && next.secure){
-          if ( !AuthFactory.isLoggedIn() ){
-            $location.path('/login')
-          }
+        if (next && next.secure) {
+            if (!AuthFactory.isLoggedIn()) {
+                $location.path('/login')
+            }
         }
-      })
-  })
+    })
+})

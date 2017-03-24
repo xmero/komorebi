@@ -5,14 +5,14 @@ const mongoose = require('mongoose')
 
 module.exports = (req,res) => {
 
-    // create reusable transporter object using the default SMTP transport
+// create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: process.env.EMAILER,
         pass: process.env.EMAIL_PASS
     }
-});
+})
 
 const { name, product, email, messageBody} = req.body
 

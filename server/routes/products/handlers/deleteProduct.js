@@ -3,7 +3,6 @@ module.exports = (req,res) => {
 
   const id = req.params.id
 
-
   Product.findByIdAndRemove  ( id )
     .then( product => {
       console.log('Product has been removed succesfully')
