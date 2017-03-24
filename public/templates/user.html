@@ -37,7 +37,7 @@
                             <i class="glyphicon glyphicon-gift"></i> Productos: {{ products.length }}
                         </p>
                         <button ng-click="showItems()" ng-show="itemlist" class="showProd"> Ocultar Productos.</button>
-                        <button ng-click="showItems()" ng-hide="itemlist" class="showProd"> Mostrar Productos.</button>
+                        <button ng-click="showItems()" ng-hide="itemlist"  ng-show="products.length" class="showProd"> Mostrar Productos.</button>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 user-descr ">
