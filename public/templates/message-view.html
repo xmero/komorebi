@@ -33,7 +33,7 @@
         <td class="text-center message-send">
           <a href="#!/messages/{{loggedUser.id}}" ng-click="editMessage(message._id)" >Marcar como no leído</a>
         </td>
-        <td class="message-send">
+        <td class="message-send" ng-if="message.sender === loggedUser.id">
           <a href="#!/messages/{{message.recipient}}" ng-if="message.sender === loggedUser.id" ng-click="deleteMessage(message._id)" class="btn btn-delete" >Eliminar</a>
         </td>
     </tr>
