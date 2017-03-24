@@ -27,9 +27,9 @@
             <textarea type="text" ng-model="$ctrl.product.description" style="width:100%"></textarea>
         </div>
         <p ng-show="editMode">Imagen:</p>
-        <input ng-show="editMode" ng-model="file" type="file" ngf-select="fileSelected($files)" accept="'image/*'">
+        <input ng-show="editMode" ng-model="$ctrl.file" type="file" ngf-select="fileSelected($files)" accept="'image/*'">
         <button ng-hide="editMode" ng-click="togEditMode()" class="btn btn-save">Editar</button>
-        <button ng-show="editMode" ng-click="togEditMode(); editProduct($event, $ctrl.product, file)" class="btn btn-save">Guardar</button>
+        <button ng-show="editMode" ng-click="togEditMode(); editProduct($event, $ctrl.product, $ctrl.file)" class="btn btn-save">Guardar</button>
         <button ng-show="editMode" ng-click="togEditMode()" class="btn-discard"> Descartar cambios </button>
         <button data-target="#deletemodal" data-toggle="modal" ng-show="editMode" ng-if="user._id === loggedUser.id" class="btn btn-delete">Eliminar</button>
     </div>

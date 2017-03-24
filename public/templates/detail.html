@@ -5,7 +5,7 @@
     </div>
     <div class="col-xs-12 col-sm-5 ">
         <div class="request-button">
-            <button ng-show="loggedUser" ng-if="product.free != 'given'" href="" data-target="#messageModal" data-toggle="modal" class="btn">Pedir!</button>
+            <button ng-show="loggedUser" ng-if="product.free != 'given' && product.owner._id != loggedUser.id" href="" data-target="#messageModal" data-toggle="modal" class="btn">Pedir!</button>
         </div>
         <div class="row product-info">
             <div class="col-xs-12 col-sm-6">

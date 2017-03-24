@@ -12,8 +12,7 @@ function TogleEditCtrl($scope, $location, ProductsFactory, Upload) {
     $scope.editProduct = (e, product, file) => {
         e.preventDefault()
         const url = '/upload' //node.js route
-        const imgFile = file
-        Upload.upload({ url, imgFile })
+        Upload.upload({ url, file })
             .success(({ imageLink }) => $scope.imageLink = imageLink)
             .then(() => {
                 const { name, location, description, _id, free, postalCode } = product
