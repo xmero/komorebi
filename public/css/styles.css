@@ -8,6 +8,7 @@ html {
     overflow-x: hidden;
 }
 
+
 .navbar-default {
   background-color: white;
   border: none;
@@ -293,5 +294,7 @@ color: black;
 .post-form{
   margin-top: 0px;
 }
-
+.banner h2 {
+font-size: 50px;
+}
 }

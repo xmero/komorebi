@@ -1,0 +1,38 @@
+.login{
+ margin-top: 120px; 
+ text-align: center;
+}
+
+.login h1{
+  margin-bottom: 40px;
+}
+
+.login input{
+  margin-top: 15px;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+
+
+
+.btn-login{
+    font-size: 18px;
+    width:100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 40px;
+    padding: 9px;
+    border: 0;
+    border-radius: 3px;
+    background-color: #FCFF00;
+    text-decoration: none;
+    cursor: pointer;
+    cursor: hand;
+    color: black;
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 520px) {
+  .login{
+    margin-top: 0px;
+  }
