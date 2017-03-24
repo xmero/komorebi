@@ -22,8 +22,11 @@ This is my final project at SkylabCoders.
 ---
 
 You need to have git and node installed on your machine. To install them go to your terminal then type:
+
 sudo apt-get install git -g
+
 sudo apt-get install node -g
+
 For windows users consult the Git and Node documentations.
 
 Installing the web-app in your local machine
@@ -37,8 +40,8 @@ Open your terminal inside the downloaded folder and type npm install
 ---
 
 To run this code you will need to set your own enviroment variables:
-
 For passport encryption
+
 SECRET=+++++++ 
 
 Setting the upload image function.
