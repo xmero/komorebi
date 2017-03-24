@@ -1,6 +1,6 @@
 angular.module("SharingTreeApp")
 
-.controller('MessagesViewCtrl', function($scope, $rootScope, $routeParams, MessagesFactory, UsersFactory) {
+.controller('MessagesViewCtrl', function($scope,$location, $rootScope, $routeParams, MessagesFactory, UsersFactory) {
     $rootScope.section = 'messageView'
 
     const id = $routeParams
@@ -28,7 +28,11 @@ angular.module("SharingTreeApp")
         const subject= `Answer to ${$scope.message.product} request.`
         const body = $scope.messageBody
        MessagesFactory.addMessage( streamId, association, sender, recipient, subject, body ,product ,from, to )
-            .then(()=>{() => window.location.reload()
+            .then(()=>{
+                window.alert("Mensaje enviado!") 
+            })
+            .then(()=>{
+                window.location.reload() 
             })
           }
 

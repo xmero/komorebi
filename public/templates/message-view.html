@@ -26,14 +26,14 @@
         <td class="message-data" >
           <p >{{message.timestamp | date : 'short'}}</p>
         </td>
-        <td>
+        <td class="message-send">
           <button  ng-if="message.sender != loggedUser.id" data-target="#messageModal" data-toggle="modal" class="btn btn-save">Responder</button>
           <button  ng-if="message.sender === loggedUser.id" data-target="#messageModal" data-toggle="modal" class="btn btn-save">Enviar mensaje</button>
         </td>
-        <td class="text-center">
+        <td class="text-center message-send">
           <a href="#!/messages/{{loggedUser.id}}" ng-click="editMessage(message._id)" >Marcar como no leído</a>
         </td>
-        <td>
+        <td class="message-send">
           <a href="#!/messages/{{message.recipient}}" ng-if="message.sender === loggedUser.id" ng-click="deleteMessage(message._id)" class="btn btn-delete" >Eliminar</a>
         </td>
     </tr>
@@ -46,7 +46,7 @@
        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <form class="form" ng-submit='addMessage($event)' >
+                <form class="form"  >
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Enviar mesaje</h4>
@@ -62,7 +62,7 @@
       </div>
       <div class="modal-footer ">
                      <button type="button" class="btn btn-discard" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class=" btn-save form-button" onclick="$('.modal').modal('hide')" >Enviar</button>
+                    <button type="submit" class=" btn-save form-button" onclick="$('.modal').modal('hide')" ng-click='addMessage($event)' >Enviar</button>
       </div>
     </form>
     </div>
