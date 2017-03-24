@@ -7,33 +7,22 @@
     <title>KOMOREBI</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    
     <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
 </head>
 
-<body> 
-
-<ng-include src="'/templates/navbar.html'"></ng-include>
-
-
-   <ng-view></ng-view>
-
-<ng-include src="'/templates/footer.html'"></ng-include>
-
+<body>
+    <ng-include src="'/templates/navbar.html'"></ng-include>
+    <ng-view></ng-view>
+    <ng-include src="'/templates/footer.html'"></ng-include>
     <script src='bower_components/jquery/dist/jquery.min.js'></script>
     <script src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
     <script src='bower_components/angular/angular.min.js'></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
-
     <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
-     <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
-
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
     <script src="js/index.js"></script>
-
-
     <script src="js/interceptors.js"></script>
-    
     <script src="js/authServices/AuthFactory.js"></script>
     <script src="js/authServices/StorageFactory.js"></script>
     <script src="js/factories/MessagesFactory.js"></script>

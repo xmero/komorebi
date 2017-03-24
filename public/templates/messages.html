@@ -1,45 +1,41 @@
 <link rel="stylesheet" href="../css/messages.css">
-
 <div class='table-container'>
-  
- <select type="text" ng-model="status" placeholder="filter">
-      <option selected="selected" value=''>Todos</option>
-      <option value="not">No leídos</option>
-      <option value="read">Leídos</option>
+    <select type="text" ng-model="status" placeholder="filter">
+        <option selected="selected" value=''>Todos</option>
+        <option value="not">No leídos</option>
+        <option value="read">Leídos</option>
     </select>
-
-<button ng-click="getSentMessages(message._id); viewSent = true">Enviados</button>
-<button ng-click="getMessages(message._id); viewSent = false">Bandeja de entrada</button>
-
-<table class="">
-  <thead>
-      <tr>
-          <th>De:</th>
-          <th>Tema:</th>
-          <th>Mensaje:</th>
-          <th ng-hide="viewSent">Recibido</th>
-          <th ng-show="viewSent">Enviado</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="message in messages | filter:{status: status } | orderBy : '-timestamp'">
-      <td>
-        {{message.from}}
-      </td>
-        <td class="message_subject">
-          <a href="#!/messages/view/{{message._id}}" ng-click="editMessage(message._id)">
+    <button ng-click="getSentMessages(message._id); viewSent = true">Enviados</button>
+    <button ng-click="getMessages(message._id); viewSent = false">Bandeja de entrada</button>
+    <table class="">
+        <thead>
+            <tr>
+                <th>De:</th>
+                <th>Tema:</th>
+                <th>Mensaje:</th>
+                <th ng-hide="viewSent">Recibido</th>
+                <th ng-show="viewSent">Enviado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="message in messages | filter:{status: status } | orderBy : '-timestamp'">
+                <td>
+                    {{message.from}}
+                </td>
+                <td class="message_subject">
+                    <a href="#!/messages/view/{{message._id}}" ng-click="editMessage(message._id)">
            {{message.subject}}
           </a>
-        </td>
-        <td class="message_subject">
-          <a href="#!/messages/view/{{message._id}}" ng-click="editMessage(message._id)">
+                </td>
+                <td class="message_subject">
+                    <a href="#!/messages/view/{{message._id}}" ng-click="editMessage(message._id)">
             {{message.body}}
-          </a>         
-        </td>
-        <td class="" >
-          <p>{{message.timestamp | date : 'short'}}</p>
-        </td>
-    </tr>
-  </tbody>
-</table>
+          </a>
+                </td>
+                <td class="">
+                    <p>{{message.timestamp | date : 'short'}}</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

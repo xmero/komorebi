@@ -1,14 +1,13 @@
+<section>
+    {{section}}
+    <div class="row item-list container">
+        <div class="col-xs-12 col-md-3 " ng-repeat="user in users">
+            <div class="container">
+                <h3>{{ user.username }}</h3>
+                <p class="item-location "><i class="glyphicon glyphicon-map-marker"></i> {{ user.location }}</p>
+                <h4>Some information </h4>
+                <p>{{user.description}}</p>
+                <a href="#!/users/{{user._id}}">{{ user._id }}</a>
+            </div>
+        </div>
         <section>
-        {{section}}
-        <div class="row item-list container">
-         <div class="col-xs-12 col-md-3 " ng-repeat="user in users">
-                    <div class="container">
-                        <h3>{{ user.username }}</h3>
-                        <p class="item-location "><i class="glyphicon glyphicon-map-marker"></i> {{ user.location }}</p>
-                        <h4>Some information </h4>
-                        <p>{{user.description}}</p>
-                        <a href="#!/users/{{user._id}}">{{ user._id }}</a>
-                    </div>
-                </div>
-                  <section>
-    

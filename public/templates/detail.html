@@ -1,52 +1,47 @@
-   <link rel="stylesheet" href="../css/details.css">
-
-        <div class="row detail">
-            <div class="col-xs-12 col-sm-7">
-                <img src="{{ product.image }}" class="prod-img img-responsive">
-            </div>
-            <div class="col-xs-12 col-sm-5 ">
-                <div class="request-button">    
-                <button ng-show="loggedUser" ng-if="product.free != 'given'" href="" data-target="#messageModal" data-toggle="modal" class="btn">Pedir!</button>
-                </div>
-            <div class="row product-info">
-                <div class="col-xs-12 col-sm-6">
-                    <h1>{{ product.name }}</h1>
-                    <p class="item-location"><i class="glyphicon glyphicon-map-marker"></i>Localizacion :  {{ product.location }}</p>
-                    <div class="description">
-                      
+<link rel="stylesheet" href="../css/details.css">
+<div class="row detail">
+    <div class="col-xs-12 col-sm-7">
+        <img src="{{ product.image }}" class="prod-img img-responsive">
+    </div>
+    <div class="col-xs-12 col-sm-5 ">
+        <div class="request-button">
+            <button ng-show="loggedUser" ng-if="product.free != 'given'" href="" data-target="#messageModal" data-toggle="modal" class="btn">Pedir!</button>
+        </div>
+        <div class="row product-info">
+            <div class="col-xs-12 col-sm-6">
+                <h1>{{ product.name }}</h1>
+                <p class="item-location"><i class="glyphicon glyphicon-map-marker"></i>Localizacion : {{ product.location }}</p>
+                <div class="description">
                     <p>Descripción: </p>
                     <p>{{ product.description }}</p>
-                    </div>
-                 </div>
-
-                <div class="user-info col-xs-12 col-sm-6 ">
-                    <div>
-                        <a href="#!/users/{{product.owner._id}}"><img class="img-responsive" src="{{ product.owner.image }}">{{ product.owner.username }}</a>
-                    </div>
-                  
-                        <p ng-if="product.owner.reviews.length <= 1">{{ product.owner.reviews.length }} Opinión </p>
-                        <p ng-if="product.owner.reviews.length >= 2">{{ product.owner.reviews.length }} Opiniones </p>
-                          
                 </div>
             </div>
-                  </div>
+            <div class="user-info col-xs-12 col-sm-6 ">
+                <div>
+                    <a href="#!/users/{{product.owner._id}}"><img class="img-responsive" src="{{ product.owner.image }}">{{ product.owner.username }}</a>
+                </div>
+                <p ng-if="product.owner.reviews.length <= 1">{{ product.owner.reviews.length }} Opinión </p>
+                <p ng-if="product.owner.reviews.length >= 2">{{ product.owner.reviews.length }} Opiniones </p>
+            </div>
         </div>
-<!-- Message Modal -->
-       <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <form class="form" ng-submit='addMessage($event); sendEmail($event)' >
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="myModalLabel">Enviar mensaje:</h2>
-                    </div>
-                    <div class="modal-body">
-                                <textarea ng-model="messageBody"  class="modal-text" placeholder="Hola, mi nombre es ... Me gustaria tener este objeto ... "></textarea>
-      </div>
-      <div class="modal-footer ">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary form-button" onclick="$('.modal').modal('hide')" >Enviar</button>
-      </div>
-    </form>
     </div>
-  </div>
+</div>
+<!-- Message Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="form" ng-submit='addMessage($event); sendEmail($event)'>
+                <div class="modal-header">
+                    <h2 class="modal-title" id="myModalLabel">Enviar mensaje:</h2>
+                </div>
+                <div class="modal-body">
+                    <textarea ng-model="messageBody" class="modal-text" placeholder="Hola, mi nombre es ... Me gustaria tener este objeto ... "></textarea>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary form-button" onclick="$('.modal').modal('hide')">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
