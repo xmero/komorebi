@@ -46,19 +46,19 @@ SECRET=+++++++
 
 + Setting the upload image function.
 
-CLOUDINARY_NAME=+++++++
+    CLOUDINARY_NAME=+++++++
 
-CLOUDINARY_API=+++++++
+    CLOUDINARY_API=+++++++
 
-CLOUDINARY_API_SECRET= =+++++++
+    CLOUDINARY_API_SECRET= =+++++++
 
-UPLOAD_FOLDER=./uploadFolder
+    UPLOAD_FOLDER=./uploadFolder
 
 + Setting emailer:
 
-EMAILER=+++++++
+    EMAILER=+++++++
 
-EMAIL_PASS=+++++++
+    EMAIL_PASS=+++++++
 
 + Connect to database:
 
